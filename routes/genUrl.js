@@ -21,7 +21,7 @@ Router.post('/', (req, res) => {
       if (doc) {
         res.json(doc);
       } else {
-        const shortUrl = baseUrl + '/' + urlCode;
+        const shortUrl = baseUrl + '/get/' + urlCode;
         url = new Url({
           longUrl: longUrl,
           shortUrl: shortUrl,
@@ -36,4 +36,5 @@ Router.post('/', (req, res) => {
     res.status(401).json('Invalid Long Url');
   }
 });
+
 module.exports = Router;

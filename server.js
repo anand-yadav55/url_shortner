@@ -21,6 +21,8 @@ app.use(express.json());
 
 const PORT = process.env.PORT || 8080;
 
-app.use('/api/genurl', require('./routes/genUrl'));
+app.use('/get', require('./routes/redirect'));
+
+app.use('/genurl', require('./routes/genUrl'));
 
 app.listen(PORT, () => console.log('Server running'));
